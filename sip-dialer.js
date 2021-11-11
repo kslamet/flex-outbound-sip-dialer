@@ -25,9 +25,9 @@ export default class SipdialPlugin extends FlexPlugin {
     flex.Actions.replaceAction('StartOutboundCall', (payload, original) => {
         // check if calling Queue is SIP
         console.log('Original Payload',payload)
-        console.log('number to call:', "sip:"+payload.destination+"@<Jasnita_URL/IP_Address>;transport=tls;region=sg1")
-        //payload.destination = "sip:"+payload.destination+"@<Jasnita_URL/IP_Address>;transport=tls;region=sg1"
-        payload.destination = "sip:"+payload.destination+"@<Jasnita_URL/IP_Address>;transport=tls;region=sg1"
+        console.log('number to call:', "sip:"+payload.destination+"@<URL/IP_Address>;transport=tls;region=sg1")
+        //payload.destination = "sip:"+payload.destination+"@<URL/IP_Address>;transport=tls;region=sg1"
+        payload.destination = "sip:"+payload.destination+"@<URL/IP_Address>;transport=tls;region=sg1"
         console.log('updated outbound call to:', payload)
         original(payload)
     })
